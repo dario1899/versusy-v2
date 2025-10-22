@@ -1,14 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './PictureDisplay.css';
 
-const PictureDisplay = () => {
-  const [images, setImages] = useState([]);
-  const [texts, setTexts] = useState({});
-  const [loading, setLoading] = useState(true);
-  const [currentSet, setCurrentSet] = useState(0);
-
-  // Multiple sets of mock data for different "versus" rounds
-  const mockImageSets = [
+// Multiple sets of mock data for different "versus" rounds
+const mockImageSets = [
     // Set 1: Nature vs Architecture
     [
       {
@@ -63,8 +57,8 @@ const PictureDisplay = () => {
     ]
   ];
 
-  // Mock data for texts - each set has different descriptions
-  const mockTextSets = [
+// Mock data for texts - each set has different descriptions
+const mockTextSets = [
     // Set 1: Nature vs Architecture
     {
       1: "18% (23 głosów)",
@@ -86,6 +80,12 @@ const PictureDisplay = () => {
       2: "55% (1340 głosów)"
     }
   ];
+
+const PictureDisplay = () => {
+  const [images, setImages] = useState([]);
+  const [texts, setTexts] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [currentSet, setCurrentSet] = useState(0);
 
   // Load images for current set
   useEffect(() => {
