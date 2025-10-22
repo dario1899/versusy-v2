@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/versusy-v2/static/css/main.6c5eca3a.css",
+    "main.js": "/versusy-v2/static/js/main.e463bd0e.js",
+    "index.html": "/versusy-v2/index.html",
+    "main.6c5eca3a.css.map": "/versusy-v2/static/css/main.6c5eca3a.css.map",
+    "main.e463bd0e.js.map": "/versusy-v2/static/js/main.e463bd0e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6c5eca3a.css",
+    "static/js/main.e463bd0e.js"
+  ]
+}
