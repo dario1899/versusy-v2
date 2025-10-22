@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import './PictureDisplay.css';
 
 // Multiple sets of mock data for different "versus" rounds
