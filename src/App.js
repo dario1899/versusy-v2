@@ -6,8 +6,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Picture Versus</h1>
-        <p>Click any picture to reveal descriptions for both images</p>
+        <h1>Versusy APP</h1>
+        <p>Wybieraj między dwoma obrazami i zobacz jak inni zagłosowali</p>
       </header>
       <main>
         <PictureDisplay />
