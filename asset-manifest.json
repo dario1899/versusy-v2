@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/versusy-v2/static/css/main.788b4b0c.css",
-    "main.js": "/versusy-v2/static/js/main.d5ede6dd.js",
+    "main.js": "/versusy-v2/static/js/main.20666809.js",
     "index.html": "/versusy-v2/index.html",
     "main.788b4b0c.css.map": "/versusy-v2/static/css/main.788b4b0c.css.map",
-    "main.d5ede6dd.js.map": "/versusy-v2/static/js/main.d5ede6dd.js.map"
+    "main.20666809.js.map": "/versusy-v2/static/js/main.20666809.js.map"
   },
   "entrypoints": [
     "static/css/main.788b4b0c.css",
-    "static/js/main.d5ede6dd.js"
+    "static/js/main.20666809.js"
   ]
 }
