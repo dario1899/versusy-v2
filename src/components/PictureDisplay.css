@@ -9,6 +9,7 @@
 .image-wrapper {
   width: 100%;
   max-width: 500px;
+  position: relative;
 }
 
 .image-container {
@@ -116,6 +117,39 @@
   background-color: #2980b9;
 }
 
+/* VS Text Styling */
+.vs-text {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+  z-index: 10;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateX(-50%) scale(1);
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+  }
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .picture-container {
@@ -133,5 +167,11 @@
   
   .text-overlay p {
     font-size: 1rem;
+  }
+  
+  .vs-text {
+    bottom: -20px;
+    font-size: 1.2rem;
+    padding: 8px 12px;
   }
 }

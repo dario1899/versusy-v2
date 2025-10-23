@@ -148,6 +148,11 @@ const PictureDisplay = () => {
               </div>
             )}
           </div>
+          {index === 0 && (
+            <div className="vs-text">
+              VS
+            </div>
+          )}
         </div>
       ))}
       
