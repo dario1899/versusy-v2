@@ -19,7 +19,7 @@ import { mockImageSets, mockTextSets } from './mockData';
         setTimeout(() => {
           setImages(mockImageSets[currentSet]);
           setLoading(false);
-        }, 1000);
+        }, 1);
       };
   
       loadImages();
