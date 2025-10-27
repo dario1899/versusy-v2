@@ -7,7 +7,7 @@ import donald1 from '../images/2-donald1.png';
 import donald2 from '../images/2-donald2.png';
 import memcen from '../images/3-memcen.png';
 import mentzen from '../images/3-mentzen.png';
-import lecka from '../images/4-łęcka.png';
+import lecka from '../images/4-lecka.png';
 import wokulski from '../images/4-wokulski.png';
 import matura from '../images/5-matura.png';
 import mature from '../images/5-mature.png';
