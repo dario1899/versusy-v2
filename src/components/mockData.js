@@ -2,7 +2,7 @@ import messi from '../images/1-messi.png';
 import ronaldo from '../images/1-ronaldo.png';
 import donald1 from '../images/2-donald1.png';
 import donald2 from '../images/2-donald2.png';
-import memcen from '../images/3-memcen.png';
+import memcen from '../images/3-memcen.jpeg';
 import mentzen from '../images/3-mentzen.png';
 import lecka from '../images/4-lecka.png';
 import wokulski from '../images/4-wokulski.png';
@@ -73,15 +73,15 @@ export const mockImageSets = [
     [
       {
         id: 1,
-        url: memcen,
-        alt: 'memcen',
-        name: 'Memcen'
-      },
-      {
-        id: 2,
         url: mentzen,
         alt: 'mentzen',
         name: 'Mentzen'
+      },
+      {
+        id: 2,
+        url: memcen,
+        alt: 'memcen',
+        name: 'Memcen'
       }
     ],
     // Set 4: Urban vs Rural
@@ -120,7 +120,7 @@ export const mockImageSets = [
           id: 1,
           url: stary,
           alt: 'stary',
-        name: 'Twoj stary'
+        name: 'Twój stary'
         },
         {
           id: 2,
@@ -156,7 +156,7 @@ export const mockImageSets = [
           id: 2,
           url: janpawel,
           alt: 'jan pawel',
-        name: 'Jan Pawel'
+        name: 'Jan Paweł'
         }
       ],
       [
@@ -165,29 +165,29 @@ export const mockImageSets = [
           id: 1,
           url: janpawel1,
           alt: 'jan pawel 1',
-        name: 'Jan Pawel I'
+        name: 'Jan Paweł I'
         },
         {
           id: 2,
           url: janpawel2,
           alt: 'jan pawel 2',
-        name: 'Jan Pawel II'
+        name: 'Jan Paweł II'
         }
       ],
       [
         // Set 10:
         {
           id: 1,
-          url: huba,
-          alt: 'huba',
-        name: 'Huba'
-        },
-        {
-          id: 2,
           url: kuba,
           alt: 'kuba',
-        name: 'Kuba'
-        }
+          name: 'Kuba'
+        },
+        {
+            id: 2,
+            url: huba,
+            alt: 'huba',
+            name: 'Huba'
+          }
       ],
       [
         // Set 11:
@@ -255,7 +255,7 @@ export const mockImageSets = [
           id: 1,
           url: gory,
           alt: 'gory',
-        name: 'Gory'
+        name: 'Góry'
         },
         {
           id: 2,
@@ -282,16 +282,16 @@ export const mockImageSets = [
       [
         // Set 17:
         {
-          id: 1,
-          url: buleczka,
-          alt: 'buleczka',
-        name: 'Buleczka'
+            id: 1,
+            url: karpiel,
+            alt: 'karpiel',
+          name: 'Karpiel'
         },
         {
           id: 2,
-          url: karpiel,
-          alt: 'karpiel',
-        name: 'Karpiel'
+          url: buleczka,
+          alt: 'buleczka',
+        name: 'Bułeczka'
         }
       ],
       [
@@ -300,13 +300,13 @@ export const mockImageSets = [
           id: 1,
           url: wew,
           alt: 'wewnatrz',
-        name: 'Do wewnatrz'
+        name: 'Do wewnątrz'
         },
         {
           id: 2,
           url: zew,
           alt: 'zewnatrz',
-        name: 'Do zewnatrz'
+        name: 'Na zewnątrz'
         }
       ],
   

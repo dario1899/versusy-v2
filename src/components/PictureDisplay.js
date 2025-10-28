@@ -101,14 +101,14 @@ import { mockImageSets, mockTextSets } from './mockData';
           </div>
         ))}
         
-        <div className="next-versus-container">
+        {/* <div className="next-versus-container">
           <button 
             className="next-versus-btn"
             onClick={handleNextVersus}
           >
             Next Versus
           </button>
-        </div>
+        </div> */}
       </div>
     );
   };
