@@ -21,11 +21,41 @@
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 4px;
   }
   
-  .image-container:hover {
+  .image-container.frame-blue {
+    border: 8px solid #0065FF;
+    background: #0065FF;
+    box-shadow: 
+      0 4px 15px rgba(0, 0, 0, 0.1),
+      inset 0 0 0 2px rgba(0, 101, 255, 0.3),
+      inset 0 0 0 6px rgba(0, 101, 255, 0.1);
+  }
+  
+  .image-container.frame-orange {
+    border: 8px solid #FF9A00;
+    background: #FF9A00;
+    box-shadow: 
+      0 4px 15px rgba(0, 0, 0, 0.1),
+      inset 0 0 0 2px rgba(255, 154, 0, 0.3),
+      inset 0 0 0 6px rgba(255, 154, 0, 0.1);
+  }
+  
+  .image-container.frame-blue:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 
+      0 8px 25px rgba(0, 101, 255, 0.3),
+      inset 0 0 0 2px rgba(0, 101, 255, 0.4),
+      inset 0 0 0 6px rgba(0, 101, 255, 0.15);
+  }
+  
+  .image-container.frame-orange:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+      0 8px 25px rgba(255, 154, 0, 0.3),
+      inset 0 0 0 2px rgba(255, 154, 0, 0.4),
+      inset 0 0 0 6px rgba(255, 154, 0, 0.15);
   }
   
   .clickable-image {
@@ -228,7 +258,6 @@
   .image-name {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #333;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 5;
   }
@@ -237,6 +266,7 @@
     text-align: center;
     margin-top: 0px;
     padding-left: 0px;
+    color: #0065FF;
   }
   
   .image-name.second {
@@ -244,6 +274,7 @@
     margin-bottom: 0px;
     padding-right: 0px;
     order: -1;
+    color: #FF9A00;
   }
   
   /* Responsive design */
@@ -259,6 +290,16 @@
     
     .clickable-image {
       height: 250px;
+    }
+    
+    .image-container.frame-blue {
+      border: 6px solid #0065FF;
+      padding: 3px;
+    }
+    
+    .image-container.frame-orange {
+      border: 6px solid #FF9A00;
+      padding: 3px;
     }
     
     .text-overlay p {

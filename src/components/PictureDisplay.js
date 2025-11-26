@@ -65,7 +65,7 @@ import { mockImageSets, mockTextSets } from './mockData';
             )}
             
             <div 
-              className="image-container"
+              className={`image-container ${index === 0 ? 'frame-blue' : 'frame-orange'}`}
               onClick={handleImageClick}
             >
               <img
