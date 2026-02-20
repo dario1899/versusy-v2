@@ -1,25 +1,20 @@
 .vote-screen {
-  height: 100vh;
-  height: 100dvh; /* Dynamic viewport height for mobile browsers */
-  max-height: 100vh;
-  max-height: 100dvh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: stretch;
   background: #ffffff;
-  padding: 0;
+  padding: 6px;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 .vote-frame {
   position: relative;
   width: 100%;
   max-width: 420px;
-  height: 100%;
   background: #ffffff;
-  border-radius: 0;
-  border: none;
+  border-radius: 24px;
+  border: 4px solid #0077ff;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -27,14 +22,11 @@
 
 .vote-section {
   position: relative;
-  flex: 1 1 50%;
-  min-height: 0;
+  flex: 1;
   background-size: cover;
   background-position: center;
-  padding: 8px;
+  padding: 12px 12px 24px;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
 }
 
 .vote-section-top {
@@ -49,8 +41,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 0;
-  border-radius: 12px;
+  border-radius: 18px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -66,9 +57,6 @@
   width: 100%;
   height: auto;
   display: block;
-  flex-shrink: 1;
-  min-height: 0;
-  object-fit: cover;
 }
 
 .player-footer {
@@ -76,11 +64,10 @@
   flex-direction: column;
   align-items: center;
   gap: 2px;
-  padding: 6px 8px 8px;
+  padding: 10px 8px 12px;
   background: transparent;
   position: relative;
   z-index: 10;
-  flex-shrink: 0;
 }
 
 .glosuj-btn {
@@ -218,38 +205,20 @@
 
   /* Responsive design */
   @media (max-width: 768px) {
-    .vote-screen {
-      padding: 0;
-    }
-
     .vote-frame {
       max-width: 100%;
-      border-radius: 0;
-      border: none;
-    }
-
-    .vote-section {
-      padding: 6px;
-    }
-
-    .player-footer {
-      padding: 4px 6px 6px;
+      border-radius: 20px;
     }
 
     .vs-image {
-      width: 80px;
+      width: 100px;
     }
 
     .player-name {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
     }
 
     .glosuj-btn img {
-      max-width: 200px;
-      width: 85%;
-    }
-
-    .player-card {
-      border-radius: 8px;
+      max-width: 260px;
     }
   }
