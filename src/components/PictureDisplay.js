@@ -3,114 +3,151 @@ import './PictureDisplay.css';
 
 import { mockImageSets, mockTextSets } from './mockData';
 
+// Design assets
+import glosujButton from '../design/glosuj-button.png';
+import vsButton from '../design/vs-button.png';
+import leftArrow from '../design/left-arrow.png';
+import rightArrow from '../design/right-arrow.png';
+import tloTop from '../design/tlo1.png';
+import tloBottom from '../design/tlo2.png';
 
-  const PictureDisplay = () => {
-    const [images, setImages] = useState([]);
-    const [texts, setTexts] = useState({});
-    const [loading, setLoading] = useState(true);
-    const [currentSet, setCurrentSet] = useState(0);
-  
-    // Load images for current set
-    useEffect(() => {
-      const loadImages = () => {
-        setLoading(true);
-        setTexts({}); // Clear previous texts
-        // Simulate API delay
-        setTimeout(() => {
-          setImages(mockImageSets[currentSet]);
-          setLoading(false);
-        }, 1);
-      };
-  
-      loadImages();
-    }, [currentSet]);
-  
-    // Handle image click - show text on BOTH pictures
-    const handleImageClick = () => {
+const PictureDisplay = () => {
+  const [images, setImages] = useState([]);
+  const [texts, setTexts] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [currentSet, setCurrentSet] = useState(0);
+
+  // Load images for current set
+  useEffect(() => {
+    const loadImages = () => {
+      setLoading(true);
+      setTexts({}); // Clear previous texts
       // Simulate API delay
       setTimeout(() => {
-        const currentTexts = mockTextSets[currentSet];
-        setTexts({
-          1: currentTexts[1],
-          2: currentTexts[2]
-        });
-      }, 300);
+        setImages(mockImageSets[currentSet]);
+        setLoading(false);
+      }, 1);
     };
-  
-    // Handle next versus button click
-    const handleNextVersus = () => {
-      const nextSet = (currentSet + 1) % mockImageSets.length;
-      console.log("liczba setow: " + mockImageSets.length)
-      setCurrentSet(nextSet);
-    };
-  
-    if (loading) {
-      return (
-        <div className="loading">
-          <div className="spinner"></div>
-          <p>Loading images...</p>
-        </div>
-      );
-    }
-    
-    return (
-      <div className="picture-container">
-        {images.map((image, index) => (
-          <div key={image.id} className="image-wrapper">
-            {/* Show name above second image */}
-            {index === 1 && (
-              <div className="image-name second">
-                {image.name}
-              </div>
-            )}
-            
-            <div 
-              className={`image-container ${index === 0 ? 'frame-blue' : 'frame-orange'}`}
-              onClick={handleImageClick}
-            >
-              <img
-                src={image.url}
-                alt={image.alt}
-                className="clickable-image"
-              />
-              {texts[image.id] && (
-                <div className="text-overlay">
-                  <p>{texts[image.id]}</p>
-                </div>
-              )}
-            </div>
-            
-            {/* Show name below first image, VS text, and arrow button */}
-            {index === 0 && (
-              <>
-                <div className="image-name first">
-                  {image.name}
-                </div>
-                <div className="vs-text">
-                  VS
-                </div>
-                <button 
-                  className="arrow-btn"
-                  onClick={handleNextVersus}
-                  aria-label="Next versus"
-                >
-                  →
-                </button>
-              </>
-            )}
-          </div>
-        ))}
-        
-        {/* <div className="next-versus-container">
-          <button 
-            className="next-versus-btn"
-            onClick={handleNextVersus}
-          >
-            Next Versus
-          </button>
-        </div> */}
-      </div>
-    );
+
+    loadImages();
+  }, [currentSet]);
+
+  // Handle image click - show text on BOTH pictures
+  const handleImageClick = () => {
+    // Simulate API delay
+    setTimeout(() => {
+      const currentTexts = mockTextSets[currentSet];
+      setTexts({
+        1: currentTexts[1],
+        2: currentTexts[2]
+      });
+    }, 300);
+  };
+
+  // Handle next versus button click
+  const handleNextVersus = () => {
+    const nextSet = (currentSet + 1) % mockImageSets.length;
+    setCurrentSet(nextSet);
+  };
+
+  const handlePrevVersus = () => {
+    const prevSet =
+      (currentSet - 1 + mockImageSets.length) % mockImageSets.length;
+    setCurrentSet(prevSet);
   };
   
-  export default PictureDisplay;
+  if (loading) {
+    return (
+      <div className="loading">
+        <div className="spinner"></div>
+        <p>Loading images...</p>
+      </div>
+    );
+  }
+
+  const topImage = images[0];
+  const bottomImage = images[1];
+
+  return (
+    <div className="vote-screen">
+      <div className="vote-frame">
+        {/* Left / Right navigation arrows */}
+        <button
+          className="nav-arrow nav-arrow-left"
+          onClick={handlePrevVersus}
+          aria-label="Previous versus"
+        >
+          <img src={leftArrow} alt="previous" />
+        </button>
+        <button
+          className="nav-arrow nav-arrow-right"
+          onClick={handleNextVersus}
+          aria-label="Next versus"
+        >
+          <img src={rightArrow} alt="next" />
+        </button>
+
+        {/* Top player section */}
+        <div
+          className="vote-section vote-section-top"
+          style={{ backgroundImage: `url(${tloTop})` }}
+        >
+          <div
+            className="player-card player-card-top"
+            onClick={handleImageClick}
+          >
+            <img
+              src={topImage.url}
+              alt={topImage.alt}
+              className="player-image"
+            />
+
+            <div className="player-footer">
+              <button className="glosuj-btn">
+                <img src={glosujButton} alt="Głosuj" />
+              </button>
+              <div className="player-name">{topImage.name}</div>
+              {texts[topImage.id] && (
+                <div className="vote-result">{texts[topImage.id]}</div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Center VS badge */}
+        <div className="vs-center">
+          <img src={vsButton} alt="vs" className="vs-image" />
+        </div>
+
+        {/* Bottom player section */}
+        <div
+          className="vote-section vote-section-bottom"
+          style={{ backgroundImage: `url(${tloBottom})` }}
+        >
+          <div
+            className="player-card player-card-bottom"
+            onClick={handleImageClick}
+          >
+            <img
+              src={bottomImage.url}
+              alt={bottomImage.alt}
+              className="player-image"
+            />
+
+            <div className="player-footer">
+              <button className="glosuj-btn">
+                <img src={glosujButton} alt="Głosuj" />
+              </button>
+              <div className="player-name">{bottomImage.name}</div>
+              {texts[bottomImage.id] && (
+                <div className="vote-result">{texts[bottomImage.id]}</div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PictureDisplay;
