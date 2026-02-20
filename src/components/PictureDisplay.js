@@ -92,10 +92,7 @@ const PictureDisplay = () => {
           className="vote-section vote-section-top"
           style={{ backgroundImage: `url(${tloTop})` }}
         >
-          <div
-            className="player-card player-card-top"
-            onClick={handleImageClick}
-          >
+          <div className="player-card player-card-top">
             <img
               src={topImage.url}
               alt={topImage.alt}
@@ -103,7 +100,7 @@ const PictureDisplay = () => {
             />
 
             <div className="player-footer">
-              <button className="glosuj-btn">
+              <button className="glosuj-btn" onClick={handleImageClick}>
                 <img src={glosujButton} alt="Głosuj" />
               </button>
               <div className="player-name">{topImage.name}</div>
@@ -124,18 +121,9 @@ const PictureDisplay = () => {
           className="vote-section vote-section-bottom"
           style={{ backgroundImage: `url(${tloBottom})` }}
         >
-          <div
-            className="player-card player-card-bottom"
-            onClick={handleImageClick}
-          >
-            <img
-              src={bottomImage.url}
-              alt={bottomImage.alt}
-              className="player-image"
-            />
-
+          <div className="player-card player-card-bottom">
             <div className="player-footer">
-              <button className="glosuj-btn">
+              <button className="glosuj-btn" onClick={handleImageClick}>
                 <img src={glosujButton} alt="Głosuj" />
               </button>
               <div className="player-name">{bottomImage.name}</div>
@@ -143,6 +131,11 @@ const PictureDisplay = () => {
                 <div className="vote-result">{texts[bottomImage.id]}</div>
               )}
             </div>
+            <img
+              src={bottomImage.url}
+              alt={bottomImage.alt}
+              className="player-image"
+            />
           </div>
         </div>
       </div>
