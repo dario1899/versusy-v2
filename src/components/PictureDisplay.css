@@ -148,11 +148,12 @@
   height: 44px;
   border-radius: 50%;
   border: none;
-  background-image: url('../design/Ellipse.png');
+  background: transparent;
+  /* background-image: url('../design/Ellipse.png');
   background-color: transparent;
   background-size: contain;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   padding: 0;
   display: flex;
   align-items: center;
