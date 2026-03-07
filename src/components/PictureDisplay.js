@@ -100,10 +100,10 @@ const PictureDisplay = () => {
             />
 
             <div className="player-footer">
+              <div className="player-name">{topImage.name}</div>
               <button className="glosuj-btn" onClick={handleImageClick}>
                 <img src={glosujButton} alt="Głosuj" />
               </button>
-              <div className="player-name">{topImage.name}</div>
               {texts[topImage.id] && (
                 <div className="vote-result">{texts[topImage.id]}</div>
               )}
