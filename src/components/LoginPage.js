@@ -22,10 +22,10 @@ export default function LoginPage({ onLogin }) {
   return (
     <div className="login-screen">
       <div className="login-card">
-        <h1 className="login-title">Sign in</h1>
-        <p className="login-subtitle">
+        <h1 className="login-title">Zaloguj się</h1>
+        {/* <p className="login-subtitle">
           Use <b>demo</b> / <b>demo</b>
-        </p>
+        </p> */}
 
         <form className="login-form" onSubmit={handleSubmit}>
           <label className="login-label">

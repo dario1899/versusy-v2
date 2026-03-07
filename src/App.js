@@ -38,7 +38,7 @@ function App() {
             <div className="auth-header">
               <div className="welcome-text">Witaj {login}</div>
               <button className="logout-button" onClick={handleLogout} type="button">
-                Logout
+                Wyloguj się
               </button>
             </div>
             <PictureDisplay />
